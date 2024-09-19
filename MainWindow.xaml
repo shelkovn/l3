@@ -1,0 +1,44 @@
+﻿
+    <Window x:Class="f.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:f"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        Name="window1">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <ToolBar VerticalAlignment="Top" Grid.Row="1">
+                <Button Click="Switchbg" MouseMove="BGinfo">
+                    <Image Source="https://cdn-icons-png.flaticon.com/512/3659/3659802.png" Height="30"/>
+                </Button>
+                <Button Click="Infoclick" MouseMove="InfoInfo">
+                    <Image Source="https://cdn-icons-png.flaticon.com/512/813/813776.png" Height="30"/>
+                </Button>
+                <Button Click="Exitclick" MouseMove="Closeinfo">
+                    <Image Source="https://cdn-icons-png.flaticon.com/512/17/17047.png" Height="30"/>
+                </Button>
+            </ToolBar>
+
+            <Menu VerticalAlignment="Top" Name="menu1" Grid.Row="0">
+                <MenuItem Header="_фон" MouseMove="BGinfo">
+                    <MenuItem Header="_темный" Click="BGblackclick" MouseMove="BGblackinfo"/>
+                    <MenuItem Header="_светлый" Click="BGwhiteclick" MouseMove="BGwhiteinfo"/>
+                </MenuItem>
+                <MenuItem Header="_инфо" Click="Infoclick" MouseMove="InfoInfo"/>
+                <MenuItem Header="_закрыть" Click="Exitclick" MouseMove="Closeinfo"/>
+            </Menu>
+        </Grid>
+        
+        <StatusBar VerticalAlignment="Bottom">
+            <TextBlock Name="status1" HorizontalAlignment="Left"/>
+        </StatusBar>
+    </Grid>
+</Window>
